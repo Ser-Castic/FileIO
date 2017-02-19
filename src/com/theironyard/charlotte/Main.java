@@ -13,17 +13,10 @@ public class Main {
     public static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-                System.out.println("Please enter a good:");
-                String good = scanner.next();
-                System.out.println("Please enter 5 attributes related to your good:");
-                Attribute one = new Attribute();
-                one.setAttributeOne(scanner.next());
-                one.setAttributeTwo(scanner.next());
-                one.setAttributeThree(scanner.next());
-                one.setAttributeFour(scanner.next());
-                one.setAttributeFive(scanner.next());
+                System.out.println("Please enter a good name, then enter 5 attributes related to your good:");
+                Attribute one = new Attribute(scanner.next(), scanner.next(), scanner.next(), scanner.next(), scanner.next(), scanner.next());
                 /* Creates JSON file */
-                File f = new File(good + ".json"); // Creates JSON file with input
+                File f = new File(one.getGoodName() + ".json"); // Creates JSON file with input
                 JsonSerializer serializer = new JsonSerializer();
                 String json = serializer.serialize(one);
                 FileWriter fw = new FileWriter(f);
@@ -48,7 +41,7 @@ public class Main {
                     one.setAttributeFour(scanner.next());
                     one.setAttributeFive(scanner.next());
                     /* After new input, new JSON file is created. */
-                    File fNew = new File(good + ".json");
+                    File fNew = new File(one.getGoodName() + ".json");
                     JsonSerializer serializerNew = new JsonSerializer();
                     String jsonNew = serializerNew.serialize(one);
                     FileWriter newFw = new FileWriter(fNew);

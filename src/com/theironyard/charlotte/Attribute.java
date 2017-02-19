@@ -1,12 +1,32 @@
 package com.theironyard.charlotte;
 
-public class Attribute extends Main{
+public class Attribute {
+    String goodName;
     String attributeOne;
     String attributeTwo;
     String attributeThree;
     String attributeFour;
     String attributeFive;
 
+    public Attribute() {
+    }
+
+    public Attribute(String goodName, String attributeOne, String attributeTwo, String attributeThree, String attributeFour, String attributeFive) {
+        this.goodName = goodName;
+        this.attributeOne = attributeOne;
+        this.attributeTwo = attributeTwo;
+        this.attributeThree = attributeThree;
+        this.attributeFour = attributeFour;
+        this.attributeFive = attributeFive;
+    }
+
+    public String getGoodName() {
+        return goodName;
+    }
+
+    public void setGoodName(String goodName) {
+        this.goodName = goodName;
+    }
 
     public String getAttributeOne() {
         return attributeOne;
@@ -49,9 +69,8 @@ public class Attribute extends Main{
     }
 
     @Override
-
     public String toString() {
-        return attributeOne + " " + attributeTwo + " " + attributeThree + " " + attributeFour+ " " + attributeFive;
+        return "Name of good: " + goodName + "\nAttribute One: " + attributeOne + "\nAttribute Two: " + attributeTwo + "\nAttribute Three: " + attributeThree + "\nAttribute Four: " + attributeFour+ "\nAttribute Five: " + attributeFive;
 
     }
 }
